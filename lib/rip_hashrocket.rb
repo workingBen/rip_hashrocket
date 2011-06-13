@@ -6,7 +6,7 @@ module RipHashrocket
     directory = options[0] || Dir.pwd
     backup = options[1] || false
 
-    # TODO : add options for recursivity (and application of the script to a single file)
+    count = 0
     rbfiles = File.join(directory ,"**", "*.rb")
     Dir.glob(rbfiles).each do |filename|
       file = File.new(filename, "r+")
@@ -16,7 +16,10 @@ module RipHashrocket
 
       lines.each_with_index do |line, i|
         newline = line.replace_rockets(line)
-        made_changes = true if lines[i] != newline
+        if lines[i] != newline
+          made_changes = true 
+          count += 1
+        end
         lines[i] = newline
       end
   
@@ -35,7 +38,7 @@ module RipHashrocket
 	      file.close
       end
     end
-    p "Hash Rockets replaced for #{Dir.glob(rbfiles).count} source files"    
+    p "Hash Rockets has upgraded hash syntax in #{count} out of #{Dir.glob(rbfiles).count} source files tested"    
   end
 
 end
