@@ -1,8 +1,6 @@
 require 'spec_helper'
 
 describe RipHashrocket do
-  subject { RipHashrocket }
-
   describe "#output syntax" do
     it 'should replace \':a => "a"\' syntax' do
       line = '{ :a => "a", :b => "b", :c => "c" }'
