@@ -16,13 +16,13 @@ module RipHashrocket
 
       lines.each_with_index do |line, i|
         newline = line.replace_rockets(line)
-        if lines[i] != newline
-          puts "line: #{lines[i]}"
-          puts "newline: #{newline}"
+        if newline != line
+          #puts "line: #{lines[i]}"
+          #puts "newline: #{newline}"
+          lines[i] = newline
           made_changes = true 
           count += 1
         end
-        lines[i] = newline
       end
   
       file.close
@@ -48,7 +48,7 @@ end
 class String
   def replace_rockets(s)
     s.gsub(/:([a-z.]*) => /) do |n|
-      n.include?('-') ? n : "#{n[1..n.size-5]}: " 
+      n.include?('-') ? n : "#{$1}: " 
     end
   end
 end
