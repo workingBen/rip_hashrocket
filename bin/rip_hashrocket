@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+# A simple tool to remove hash rockets in multiple ".rb" files
+
+require 'rip_hashrocket'
+
+RipHashrocket.process(ARGV)
+
