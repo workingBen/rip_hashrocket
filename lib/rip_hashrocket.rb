@@ -18,7 +18,7 @@ module RipHashrocket
       file.puts(lines.join)
       file.close
     end
-    p "Magic comments set for #{Dir.glob(rbfiles).count} source files"    
+    p "Hash Rockets replaced for #{Dir.glob(rbfiles).count} source files"    
   end
 
   def replace_rockets(s)
