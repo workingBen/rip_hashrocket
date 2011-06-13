@@ -2,6 +2,9 @@ require "rip_hashrocket/version"
 
 module RipHashrocket
   def self.process(options)
+  
+    directory = options[0] || Dir.pwd
+
     # TODO : add options for recursivity (and application of the script to a single file)
     rbfiles = File.join(directory ,"**", "*.rb")
     Dir.glob(rbfiles).each do |filename|
