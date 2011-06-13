@@ -6,7 +6,8 @@ module RipHashrocket
     directory = options[0] || Dir.pwd
     backup = options[1] || false
 
-    count = 0
+    filecount = 0
+    linecount = 0
     rbfiles = File.join(directory ,"**", "*.rb")
     Dir.glob(rbfiles).each do |filename|
       file = File.new(filename, "r+")
@@ -21,12 +22,13 @@ module RipHashrocket
           #puts "newline: #{newline}"
           lines[i] = newline
           made_changes = true 
-          count += 1
+          linecount += 1
         end
       end
   
       file.close
       if made_changes
+        filecount += 1
 	      if backup
           File.rename(filename, filename + ".bak")
         else
@@ -38,7 +40,7 @@ module RipHashrocket
 	      file.close
       end
     end
-    p "Hash Rockets has upgraded hash syntax in #{count} out of #{Dir.glob(rbfiles).count} source files tested"    
+    p "Hash Rockets has upgraded hash syntax on #{linecount} lines in #{filecount} out of #{Dir.glob(rbfiles).count} source files tested"    
   end
 
 end
