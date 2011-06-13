@@ -1,0 +1,9 @@
+Ruby Gem for updating hash syntax from Ruby 1.8 to 1.9 syle, removing rockets "=>"
+
+
+INSTALLATION:
+gem install rip_hashrocket
+
+USAGE:
+rip_hashrocket
+
