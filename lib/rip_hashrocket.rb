@@ -26,8 +26,4 @@ module RipHashrocket
       n.include?('-') ? n : "#{n[1..n.size-5]}: " 
     end
   end
-
-  def self.ipsum  
-    "Lorem ipsum dolor sit amet, consectetur adipisicing ...."  
-  end
 end
