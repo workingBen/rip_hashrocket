@@ -17,6 +17,8 @@ module RipHashrocket
       lines.each_with_index do |line, i|
         newline = line.replace_rockets(line)
         if lines[i] != newline
+          puts "line: #{lines[i]}"
+          puts "newline: #{newline}"
           made_changes = true 
           count += 1
         end
