@@ -45,7 +45,7 @@ end
 
 class String
   def replace_rockets(s)
-    s.gsub(/:([a-z.]*) => /) do |n|
+    s.gsub(/:([a-z.]*)(\s{0,})=>(\s{0,})/) do |n|
       n.include?('-') ? n : "#{$1}: " 
     end
   end
