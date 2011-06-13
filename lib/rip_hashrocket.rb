@@ -13,7 +13,7 @@ module RipHashrocket
       lines = file.readlines
 
       lines.each_with_index do |line, i|
-        newline = replace_rockets(line)
+        newline = line.replace_rockets(line)
         lines[i] = newline
       end
             
@@ -24,6 +24,9 @@ module RipHashrocket
     p "Hash Rockets replaced for #{Dir.glob(rbfiles).count} source files"    
   end
 
+end
+
+class String
   def replace_rockets(s)
     s.gsub(/:([a-z.]*) => /) do |n|
       n.include?('-') ? n : "#{n[1..n.size-5]}: " 
