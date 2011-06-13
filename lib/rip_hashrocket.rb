@@ -34,8 +34,6 @@ module RipHashrocket
         end
 
 	      file = File.new(filename, "w+")
-	
-	      file.rewind
 	      file.puts(lines.join)
 	      file.close
       end
