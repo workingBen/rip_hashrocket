@@ -9,7 +9,9 @@ module RipHashrocket
     filecount = 0
     linecount = 0
     rbfiles = File.join(directory ,"**", "*.rb")
-    Dir.glob(rbfiles).each do |filename|
+    hamlfiles = File.join(directory ,"**", "*.html.haml")
+    erbfiles = File.join(directory ,"**", "*.html.erb")
+    [Dir.glob(rbfiles) + Dir.glob(hamlfiles) + Dir.glob(erbfiles)].each do |filename|
       file = File.new(filename, "r+")
 
       made_changes = false
