@@ -11,7 +11,7 @@ module RipHashrocket
     rbfiles = File.join(directory ,"**", "*.rb")
     hamlfiles = File.join(directory ,"**", "*.html.haml")
     erbfiles = File.join(directory ,"**", "*.html.erb")
-    [Dir.glob(rbfiles) + Dir.glob(hamlfiles) + Dir.glob(erbfiles)].each do |filename|
+    (Dir.glob(rbfiles) + Dir.glob(hamlfiles) + Dir.glob(erbfiles)).each do |filename|
       file = File.new(filename, "r+")
 
       made_changes = false
