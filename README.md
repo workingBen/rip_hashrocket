@@ -6,8 +6,8 @@ Searches for hash rockets in `.rb`, [`.slim`](https://github.com/slim-template/s
 
 ## Installation
 
-gem install rip_hashrocket
+In your terminal execute `gem install rip_hashrocket`.
 
 ## Usage
 
-rip_hashrocket
+In your terminal execute `rip_hashrocket`.
